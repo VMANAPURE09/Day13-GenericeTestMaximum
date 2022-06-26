@@ -6,39 +6,34 @@ using System.Threading.Tasks;
 
 namespace GenericsTest
 {
-    internal class GenericMaximum<T> where T : IComparable
+    internal class MaximumNumber
     {
-        public T firstValue, secondValue, thirdValue;
 
-        public GenericMaximum(T firstValue, T secondValue, T thirdValue)
+        public int ReturnMaxNumber(int num1, int num2, int num3)
         {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
-        }
+            int temp;
+            if (num1.CompareTo(num2) > 0 && num1.CompareTo(num3) > 0)
+            {
+                return num1;
+            }
 
-        public static T MaxValue(T firstValue, T secondValue, T thirdValue)
-        {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
+            else if (num2.CompareTo(num1) > 0 && num2.CompareTo(num3) > 0)
             {
-                return firstValue;
+                temp = num1;
+                num1 = num2;
+                num2 = temp;
+
+                return num1;
             }
-            else if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
-            {
-                return secondValue;
-            }
+
             else
             {
-                return thirdValue;
+                temp = num1;
+                num1 = num3;
+                num3 = temp;
+
+                return num1;
             }
         }
-
-        public T MaxMethod()
-        {
-            T max = GenericMaximum<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);
-            return max;
-        }
-
-
     }
 }
