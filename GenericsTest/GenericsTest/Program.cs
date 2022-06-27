@@ -6,12 +6,13 @@ namespace GenericsTest
     {
         static void Main(string[] args)
         {
-            int num1 = 16;
-            int num2 = 22;
-            int num3 = 32;
+            int num1 = 10;
+            int num2 = 30;
+            int num3 = 20;
             MaximumNumber max = new MaximumNumber();
             int maxNumber = max.ReturnMaxNumber(num1, num2, num3);
             Console.WriteLine("max number is " + maxNumber);
+
         }
     }
 }

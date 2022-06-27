@@ -8,7 +8,6 @@ namespace GenericsTest
 {
     internal class MaximumNumber
     {
-
         public int ReturnMaxNumber(int num1, int num2, int num3)
         {
             int temp;
@@ -37,3 +36,6 @@ namespace GenericsTest
         }
     }
 }
+
+
+
