@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace GenericsTest
 {
-    internal class MaximumNumber
+    internal class FloatNumber
     {
-        public int ReturnMaxNumber(int num1, int num2, int num3)
+        public float FindMaximum(float num1, float num2, float num3)
         {
-            int temp;
             if (num1.CompareTo(num2) > 0 && num1.CompareTo(num3) > 0)
             {
                 return num1;
@@ -18,20 +17,11 @@ namespace GenericsTest
 
             else if (num2.CompareTo(num1) > 0 && num2.CompareTo(num3) > 0)
             {
-                temp = num1;
-                num1 = num2;
-                num2 = temp;
-
-                return num1;
+                return num2;
             }
-
             else
             {
-                temp = num1;
-                num1 = num3;
-                num3 = temp;
-
-                return num1;
+                return num3;
             }
         }
     }
